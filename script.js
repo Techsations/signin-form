@@ -18,3 +18,12 @@ function showUp() {
    }, 5000);
 }
 
+function submit() {
+    let email = document.getElementById("email").value;
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    localStorage.setItem("email", email);
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
+}
