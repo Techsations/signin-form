@@ -2,12 +2,12 @@ document.getElementById('container-2').style.display = 'none'
 let timeout;
 
 
-function showIn() {
-    setTimeout(() => {
-        document.getElementById('container-1').style.display = 'none';
-        document.getElementById('container-2').style.display = 'block';
-    }, 5000);
-}
+// function showIn() {
+//     setTimeout(() => {
+//         document.getElementById('container-1').style.display = 'none';
+//         document.getElementById('container-2').style.display = 'block';
+//     }, 5000);
+// }
 
 
 
@@ -26,4 +26,10 @@ function submit() {
     localStorage.setItem("email", email);
     localStorage.setItem("username", username);
     localStorage.setItem("password", password);
+
+
+    setTimeout(() => {
+        document.getElementById('container-1').style.display = 'none';
+        document.getElementById('container-2').style.display = 'block';
+    }, 5000);
 }
