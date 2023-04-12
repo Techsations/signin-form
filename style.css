@@ -45,7 +45,8 @@
     font-size: 18px;
 }
 
-#loader{
+#loader,
+#loader1 {
     position: absolute;
     background-color: transparent;
     top: 60px;
