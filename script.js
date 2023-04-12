@@ -1,6 +1,9 @@
 let loader1 = document.getElementById("loader1");
 let loader = document.getElementById("loader");
 document.getElementById('container-2').style.display = 'none';
+loader1.style.display = 'none';
+loader.style.display = 'none';
+
 let timeout;
 
 
@@ -11,13 +14,24 @@ let timeout;
 //     }, 5000);
 // }
 
-
+let userLogin = document.getElementById("userLogin");
+let passLogin = document.getElementById("passLogin");
 
 function showUp() {
+    loader.style.display = 'block';
    setTimeout(() => {
-    document.getElementById("loader").style.display = 'none'
-    document.getElementById('container-1').style.display = 'block';
-    document.getElementById('container-2').style.display = 'none';
+    loader.style.display = 'none';
+
+    let loginUser = userLogin.value;
+    console.log(loginUser);
+    let loginPass = passLogin.value;
+    console.log(loginPass);
+
+    let storage = JSON.parse(localStorage.getItem("user")) || [];
+    console.log(storage);
+
+    let registered = storage.find((user) => user.email === loginUser && user.password === loginPass);
+    console.log(registered);
    }, 3000);
 }
 
@@ -26,8 +40,6 @@ let username = document.getElementById("username");
 let password = document.getElementById("password");
 let signUpMessage = document.getElementById("signup-msg");
 
-loader1.style.display = 'none';
-loader.style.display = 'none';
 
 
 function submit() {
