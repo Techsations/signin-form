@@ -29,7 +29,15 @@ function showUp() {
         // Redirect to the dashboard page and store the current user in localStorage
         window.location.href = "dashboard.html";
         window.localStorage.setItem("currentUser", JSON.stringify(registered));
-      } 
+      } else {
+        // Display a failure message if the login credentials are invalid
+        loginMessage.innerHTML = `
+          <p id="failed-msg">Login failed! Please check your email and password.</p>
+        `;
+        setTimeout(() => {
+            loginMessage.style.display = "none";
+          }, 3000);
+        }
    }, 3000);
 }
 
