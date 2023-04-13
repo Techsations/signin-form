@@ -6,19 +6,11 @@ loader.style.display = 'none';
 
 let timeout;
 
-
-// function showIn() {
-//     setTimeout(() => {
-//         document.getElementById('container-1').style.display = 'none';
-//         document.getElementById('container-2').style.display = 'block';
-//     }, 5000);
-// }
-
 let userLogin = document.getElementById("userLogin");
 let passLogin = document.getElementById("passLogin");
 
 function showUp() {
-    loader.style.display = 'block';
+    loader.style.display = 'none';
    setTimeout(() => {
     loader.style.display = 'none';
 
@@ -32,6 +24,12 @@ function showUp() {
 
     let registered = storage.find((user) => user.email === loginUser && user.password === loginPass);
     console.log(registered);
+
+    if (registered) {
+        // Redirect to the dashboard page and store the current user in localStorage
+        window.location.href = "dashboard.html";
+        window.localStorage.setItem("currentUser", JSON.stringify(registered));
+      } 
    }, 3000);
 }
 
@@ -85,13 +83,3 @@ function submit() {
 
 
 }
-
-
-// setTimeout(() => {
-//     document.getElementById("loader").style.display = 'block'
-//     // document.getElementById('container-1').style.display = 'none';
-//     // document.getElementById('container-2').style.display = 'block';
-// }, 5000);
-
-// document.getElementById('container-1').style.display = 'none';
-// document.getElementById('container-2').style.display = 'block';
