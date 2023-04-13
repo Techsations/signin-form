@@ -41,6 +41,13 @@ function showUp() {
    }, 3000);
 }
 
+function getUserInfo() {
+    let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    console.log(currentUser);
+  }
+  
+  getUserInfo();
+
 let email = document.getElementById("email");
 let username = document.getElementById("username");
 let password = document.getElementById("password");
