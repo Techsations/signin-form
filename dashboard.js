@@ -9,19 +9,19 @@ let welcomeDiv = document.getElementById("welcome");
 let logoutBtn = document.getElementById("logout-btn");
 
 // Get the current user information from localStorage
-let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+let user = JSON.parse(localStorage.getItem("user"));
 
 // If there is no current user, redirect to the login page
-if (!currentUser) {
+if (!user) {
     window.location.href = "index.html";
   }
 
 // Display the welcome message with the current user's name
-dashboardWelcome.innerHTML = `Welcome, ${currentUser.username}!`;
+dashboardWelcome.innerHTML = `Welcome, ${user.username}!`;
 
 // Handle the logout process
 logoutBtn.addEventListener("click", () => {
   // Remove the current user from localStorage and redirect to the login page
-  localStorage.removeItem("currentUser");
+  localStorage.removeItem("user");
   window.location.href = "index.html";
 });

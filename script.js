@@ -6,12 +6,13 @@ loader.style.display = 'none';
 
 let timeout;
 
-let userLogin = document.getElementById("userLogin");
-let passLogin = document.getElementById("passLogin");
 
 function showUp() {
+    let userLogin = document.getElementById("userLogin");
+    let passLogin = document.getElementById("passLogin");
+
     loader.style.display = 'none';
-   setTimeout(() => {
+    setTimeout(() => {
     loader.style.display = 'none';
 
     let loginUser = userLogin.value;
@@ -22,13 +23,13 @@ function showUp() {
     let storage = JSON.parse(localStorage.getItem("user")) || [];
     console.log(storage);
 
-    let registered = storage.find((user) => user.email === loginUser && user.password === loginPass);
+    let registered = storage.find((user) => user.username === loginUser && user.password === loginPass);
     console.log(registered);
 
     if (registered) {
         // Redirect to the dashboard page and store the current user in localStorage
         window.location.href = "dashboard.html";
-        window.localStorage.setItem("currentUser", JSON.stringify(registered));
+        window.localStorage.setItem("user", JSON.stringify(registered));
       } else {
         // Display a failure message if the login credentials are invalid
         loginMessage.innerHTML = `
@@ -42,8 +43,8 @@ function showUp() {
 }
 
 function getUserInfo() {
-    let currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    console.log(currentUser);
+    let user = JSON.parse(localStorage.getItem("user"));
+    console.log(user);
   }
   
   getUserInfo();
@@ -69,8 +70,8 @@ function submit() {
             };
 
             let storage = JSON.parse(localStorage.getItem("user")) || [];
-            storage.push(data)
-            localStorage.setItem("user", JSON.stringify(storage))
+            storage.push(data);
+            localStorage.setItem("user", JSON.stringify(storage));
             signUpMessage.innerHTML = `
             <p id="success-msg">Sign up successful!!!</p>
             `;
