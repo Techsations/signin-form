@@ -10,7 +10,7 @@ function logInPage() {
   window.location.href = "signin.html";
 }
 
-let storage = JSON.parse(localStorage.getItem("allUsers"));
+let storage = JSON.parse(localStorage.getItem("myUsers"));
 
 function submit(ev) {
     ev.preventDefault();
@@ -21,17 +21,18 @@ function submit(ev) {
         alert("Password must be at least 8 characters long")
     } else {
         let users = {
-            username: username.value,
             email: email.value,
+            username: username.value,
             password: password.value,
         }
         if (storage === null) {
-          storage = [];
+          let storage = [];
           storage.push(users);
-          localStorage.setItem("allUsers", JSON.stringify(storage));
+          localStorage.setItem("myUsers", JSON.stringify(storage));
+          console.log(typeof(storage));
       } else {
           storage.push(users);
-          localStorage.setItem("allUsers", JSON.stringify(storage));
+          localStorage.setItem("myUsers", JSON.stringify(storage));
       }
       signUpMsg.innerHTML = `
           <p id="success-msg">Sign up successful!!!</p>
