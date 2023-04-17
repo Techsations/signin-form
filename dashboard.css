@@ -1,0 +1,27 @@
+/* Center the dashboard on the page */
+#dashboard {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  /* Add some padding to the welcome message */
+  #welcome {
+    padding: 20px;
+  }
+  
+  /* Style the log out button */
+  #logout-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  /* On hover, change the background color of the log out button */
+  #logout-btn:hover {
+    background-color: #0056b3;
+  }
+  
