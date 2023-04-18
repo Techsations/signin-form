@@ -71,8 +71,7 @@ body {
     border: 1px solid #f5c6cb;
   }
   
-  #loader,
-  #loader1 {
+  #loader {
     display: flex;
     justify-content: center;
     margin-top: 20px;
