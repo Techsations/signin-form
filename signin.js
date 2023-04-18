@@ -10,3 +10,17 @@ function signUpPage() {
 
 let storage = JSON.parse(localStorage.getItem("allUsers"));
 console.log(storage);
+
+function logIn() {
+    // ev.preventDefault();
+    let authorizedUser = storage.find((el)=> el.username == userLogin.value && el.password == passLogin.value);
+    console.log(authorizedUser);
+    loading.style.display = "block";
+    if (!authorizedUser) {
+        setTimeout(() => {
+            loading.style.display = "none";
+        }, 2900);
+        setTimeout(() => {
+            alert("User Information Incorrect");
+        }, 3000);
+    }
