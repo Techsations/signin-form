@@ -9,7 +9,7 @@ let welcomeDiv = document.getElementById("welcome");
 let logoutBtn = document.getElementById("logout-btn");
 
 // Get the current user information from localStorage
-let user = JSON.parse(localStorage.getItem("user"));
+let user = JSON.parse(localStorage.getItem("CU"));
 
 // If there is no current user, redirect to the login page
 if (!user) {

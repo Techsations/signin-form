@@ -7,7 +7,7 @@ loading.style.display = "none";
 
 
 function logInPage() {
-  window.location.href = "sigin.html";
+  window.location.href = "signin.html";
 }
 
 let storage = JSON.parse(localStorage.getItem("myUsers"));
