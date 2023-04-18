@@ -7,13 +7,13 @@ loading.style.display = "none";
 
 
 function logInPage() {
-  window.location.href = "signin.html";
+  window.location.href = "sigin.html";
 }
 
 let storage = JSON.parse(localStorage.getItem("myUsers"));
 
-function submit(ev) {
-    ev.preventDefault();
+function submit() {
+    // ev.preventDefault();
 
     if (username.value === "" || email.value === "" || password.value === "") {
         alert("Please fill all the neccessary details")
@@ -48,5 +48,9 @@ function submit(ev) {
     username.value = "";
     email.value = "";
     password.value = "";
+
+    console.log(email.value);
+    console.log(username.value);
+    console.log(password.value);
       }
     }
